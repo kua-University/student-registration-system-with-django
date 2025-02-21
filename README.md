@@ -1,4 +1,4 @@
-No problem! Below is the updated `README.md` file that includes details about testing (component testing, integration testing, and system testing) using `pytest`.
+
 
 ```markdown
 # Student Payment System
@@ -189,5 +189,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 1. Replace `yourusername` in the repository URL with your actual GitHub username.
 2. Update the `.env` file with your Stripe API keys.
 3. Ensure you have written the corresponding test files (`test_models.py`, `test_forms.py`, `test_urls.py`, `test_views.py`, and `test_system.py`) in the `payment/tests/` directory.
-
-Let me know if you need further assistance! 🚀
