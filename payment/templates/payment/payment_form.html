@@ -1,0 +1,27 @@
+{% extends 'payment/base.html' %}
+{% block content %}
+    <form id="payment-form" action="{% url 'create_checkout_session' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div id="card-element"></div>
+        <button id="submit-button">Pay</button>
+    </form>
+
+    <script>
+        const stripe = Stripe('{{ stripe_publishable_key }}');
+        const elements = stripe.elements();
+        const card = elements.create('card');
+        card.mount('#card-element');
+
+        const form = document.getElementById('payment-form');
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const { paymentMethod, error } = await stripe.createPaymentMethod('card', card);
+            if (error) {
+                console.error(error);
+            } else {
+                form.submit();
+            }
+        });
+    </script>
+ {% endblock %}

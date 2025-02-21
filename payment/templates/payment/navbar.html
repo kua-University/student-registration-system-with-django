@@ -1,0 +1,20 @@
+{% load static%}
+<link rel="stylesheet" href="{% static 'payment/navbar.css' %}">
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-warning" href="#">registration system</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3">
+               
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'payment' %}">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Register</a></li>
+
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>

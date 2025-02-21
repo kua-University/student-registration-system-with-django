@@ -1,0 +1,59 @@
+{% extends 'payment/base.html'%}
+{% load static %}
+{% block content %}
+    <section class="hero-section text-center">
+        <div class="container">
+            <img src="{% static 'payment/image/istockphoto-2173956792-1024x1024.jpg' %}" class="card-img-top" alt="Student Management">
+           <!-- <a href="{% static 'payment/image/istockphoto-1031384160-1024x1024.jpg' %}" class="btn btn-primary btn-lg mt-3">Register a Student</a> -->
+        </div>
+    </section>
+    <section class="container-fluid py-5">
+        <div class="  text-center">
+            <h2 class="mb-4">Features of Our System</h2>
+            <div class="me-auto mb-2 mb-lg-0 ml-2 d-flex flex-row gap-3 row g-4">
+                <div class="col-lg-3 col-md-6" >
+                    <div class="card feature-card shadow-sm">
+                        <img src="{% static 'payment/image/istockphoto-2172370438-1024x1024.jpg' %}" class="card-img-top" alt="Student Management">
+                        <div class="card-body">
+                            <h5 class="card-title">Student Management</h5>
+                            <p class="card-text">Easily manage student details, registrations, and progress tracking.</p>
+                            <a href="#" class="btn btn-outline-primary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" id="card-two">
+                    <div class="card feature-card shadow-sm">
+                        <img src="{% static 'payment/image/istockphoto-2188225039-1024x1024.jpg' %}"class="card-img-top" alt="Course Management">
+                        <div class="card-body">
+                            <h5 class="card-title">Course Management</h5>
+                            <p class="card-text">Register and organize courses for a seamless learning experience.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3" id="card-three">
+                    <div class="card feature-card shadow-sm">
+                        <img src="{% static 'payment/image/istockphoto-1031384160-1024x1024.jpg' %}"class="card-img-top" alt="Payment Processing">
+                        <div class="card-body">
+                            <h5 class="card-title">Payment Processing</h5>
+                            <p class="card-text">Secure and efficient payment methods for student registrations.</p>
+                            <a href="#" class="btn btn-outline-primary">Make a Payment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-primary text-white py-5">
+        <div class="container text-center">
+            <h3>Ready to streamline your student registration process?</h3>
+            <a href="{% url 'payment' %}" class="btn btn-light btn-lg mt-3">Start Now</a>
+        </div>
+    </section>
+
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Student Registration System | Designed by matyos</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
