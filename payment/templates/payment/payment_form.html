@@ -1,12 +1,17 @@
 {% extends 'payment/base.html' %}
+{% load static %} 
 {% block content %}
-    <form id="payment-form" action="{% url 'create_checkout_session' %}" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <div id="card-element"></div>
-        <button id="submit-button">Pay</button>
-    </form>
-
+<link rel="stylesheet" href="{% static 'payment/payment_form.css' %}">
+<div class="form-wrapper">
+    <div class="form-container">
+       <form id="payment-form" action="{% url 'create_checkout_session' %}" method="post">
+             {% csrf_token %}
+             {{ form.as_p }}
+             <div id="card-element"></div>
+             <button id="submit-button">Pay</button>
+       </form>
+    <div>
+ </div>
     <script>
         const stripe = Stripe('{{ stripe_publishable_key }}');
         const elements = stripe.elements();

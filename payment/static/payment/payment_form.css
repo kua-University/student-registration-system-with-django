@@ -1,0 +1,68 @@
+/* Ensure the body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Center the form wrapper */
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the form container */
+.form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+}
+
+/* Style the form elements */
+#payment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#payment-form p {
+    margin-bottom: 15px;
+}
+
+#payment-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#payment-form input, #payment-form select, #payment-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#card-element {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#submit-button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submit-button:hover {
+    background-color: #218838;
+}

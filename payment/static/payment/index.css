@@ -1,0 +1,45 @@
+/* Ensure the hero image fills the page horizontally */
+.hero-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Add hover effect to the cards */
+.feature-card {
+    transition: box-shadow 0.3s ease;
+    margin: 10px; /* Add margin between cards */
+}
+
+.feature-card:hover {
+    box-shadow: 0 4px 8px rgba(192, 192, 192, 0.7); /* Silver shadow on hover */
+}
+
+/* Align cards in a row with equal spacing */
+.d-flex.flex-row {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Ensure cards have consistent width and spacing */
+.col-lg-3 {
+    flex: 1 1 calc(25% - 20px); /* Adjust width and margin */
+    max-width: calc(25% - 20px); /* Ensure cards don't exceed width */
+    margin: 10px; /* Add margin between cards */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .col-lg-3 {
+        flex: 1 1 calc(50% - 20px); /* Two cards per row on tablets */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .col-lg-3 {
+        flex: 1 1 100%; /* One card per row on mobile */
+        max-width: 100%;
+    }
+}
