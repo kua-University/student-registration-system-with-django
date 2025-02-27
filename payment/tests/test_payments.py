@@ -1,5 +1,9 @@
 import pytest
 from django.urls import reverse
+<<<<<<< HEAD
+=======
+from django.conf import settings
+>>>>>>> 6938dfa (i commit student payment system)
 from django.test import Client
 from .models import Payment
 import stripe
@@ -15,7 +19,12 @@ def mock_checkout_session(mocker):
 
 # Test Case 1: Test Payment Form Submission (POST)
 @pytest.mark.django_db
+<<<<<<< HEAD
 def test_payment_page_post(client, mock_stripe_payment_intent):
+=======
+def test_payment_page_post(mock_stripe_payment_intent):
+    client = Client()
+>>>>>>> 6938dfa (i commit student payment system)
     data = {
         'student_name': 'John Doe',
         'email': 'john.doe@example.com',
@@ -33,9 +42,18 @@ def test_payment_page_post(client, mock_stripe_payment_intent):
     assert response.status_code == 302
     assert response.url == reverse('success_page')
 
+<<<<<<< HEAD
 # Test Case 2: Test Checkout Session Creation (POST)
 @pytest.mark.django_db
 def test_create_checkout_session_post(client, mock_checkout_session):
+=======
+
+# Test Case 2: Test Checkout Session Creation (POST)
+@pytest.mark.django_db
+def test_create_checkout_session_post(mock_checkout_session):
+    client = Client()
+
+>>>>>>> 6938dfa (i commit student payment system)
     response = client.post(reverse('create_checkout_session'))
     
     # Check if the Stripe session creation was called
@@ -45,9 +63,17 @@ def test_create_checkout_session_post(client, mock_checkout_session):
     assert response.status_code == 302
     assert response.url == 'http://localhost:8000/checkout'
 
+<<<<<<< HEAD
 # Test Case 3: Test Successful Payment Redirect
 @pytest.mark.django_db
 def test_success_page_get(client):
+=======
+
+# Test Case 3: Test Successful Payment Redirect
+@pytest.mark.django_db
+def test_success_page_get():
+    client = Client()
+>>>>>>> 6938dfa (i commit student payment system)
     response = client.get(reverse('success_page'))
     
     # Check that the success page renders correctly
